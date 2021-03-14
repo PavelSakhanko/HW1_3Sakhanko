@@ -10,7 +10,7 @@
 		4B2986F225FABFDA00B67FCA /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2986EE25FABFDA00B67FCA /* AppSettings.swift */; };
 		4B2986FC25FAC98F00B67FCA /* GifDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2986FB25FAC98F00B67FCA /* GifDetailView.swift */; };
 		4B29870025FACAFA00B67FCA /* GifSuperDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2986FF25FACAFA00B67FCA /* GifSuperDetailView.swift */; };
-		4B4EC40B25D16159009F38AF /* HW1_2SakhankoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EC40A25D16159009F38AF /* HW1_2SakhankoApp.swift */; };
+		4B4EC40B25D16159009F38AF /* HW1_3SakhankoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EC40A25D16159009F38AF /* HW1_3SakhankoApp.swift */; };
 		4B4EC40F25D1615A009F38AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4EC40E25D1615A009F38AF /* Assets.xcassets */; };
 		4B4EC41225D1615A009F38AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4EC41125D1615A009F38AF /* Preview Assets.xcassets */; };
 		4B4EC42725D16282009F38AF /* GifRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EC42025D16282009F38AF /* GifRowView.swift */; };
@@ -24,8 +24,8 @@
 		4B2986EE25FABFDA00B67FCA /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		4B2986FB25FAC98F00B67FCA /* GifDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifDetailView.swift; sourceTree = "<group>"; };
 		4B2986FF25FACAFA00B67FCA /* GifSuperDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifSuperDetailView.swift; sourceTree = "<group>"; };
-		4B4EC40725D16159009F38AF /* HW1_2Sakhanko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW1_2Sakhanko.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B4EC40A25D16159009F38AF /* HW1_2SakhankoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW1_2SakhankoApp.swift; sourceTree = "<group>"; };
+		4B4EC40725D16159009F38AF /* HW1_3Sakhanko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW1_3Sakhanko.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B4EC40A25D16159009F38AF /* HW1_3SakhankoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW1_3SakhankoApp.swift; sourceTree = "<group>"; };
 		4B4EC40E25D1615A009F38AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B4EC41125D1615A009F38AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4B4EC41325D1615A009F38AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 		4B4EC3FE25D16159009F38AF = {
 			isa = PBXGroup;
 			children = (
-				4B4EC40925D16159009F38AF /* HW1_2Sakhanko */,
+				4B4EC40925D16159009F38AF /* HW1_3Sakhanko */,
 				4B4EC40825D16159009F38AF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,12 +66,12 @@
 		4B4EC40825D16159009F38AF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4B4EC40725D16159009F38AF /* HW1_2Sakhanko.app */,
+				4B4EC40725D16159009F38AF /* HW1_3Sakhanko.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4B4EC40925D16159009F38AF /* HW1_2Sakhanko */ = {
+		4B4EC40925D16159009F38AF /* HW1_3Sakhanko */ = {
 			isa = PBXGroup;
 			children = (
 				4B4EC42E25D1628E009F38AF /* Model */,
@@ -81,7 +81,7 @@
 				4B4EC41A25D16196009F38AF /* Sources */,
 				4B4EC41025D1615A009F38AF /* Preview Content */,
 			);
-			path = HW1_2Sakhanko;
+			path = HW1_3Sakhanko;
 			sourceTree = "<group>";
 		};
 		4B4EC41025D1615A009F38AF /* Preview Content */ = {
@@ -95,7 +95,7 @@
 		4B4EC41A25D16196009F38AF /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				4B4EC40A25D16159009F38AF /* HW1_2SakhankoApp.swift */,
+				4B4EC40A25D16159009F38AF /* HW1_3SakhankoApp.swift */,
 				4B4EC40E25D1615A009F38AF /* Assets.xcassets */,
 				4B4EC41325D1615A009F38AF /* Info.plist */,
 			);
@@ -149,9 +149,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4B4EC40625D16159009F38AF /* HW1_2Sakhanko */ = {
+		4B4EC40625D16159009F38AF /* HW1_3Sakhanko */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4B4EC41625D1615A009F38AF /* Build configuration list for PBXNativeTarget "HW1_2Sakhanko" */;
+			buildConfigurationList = 4B4EC41625D1615A009F38AF /* Build configuration list for PBXNativeTarget "HW1_3Sakhanko" */;
 			buildPhases = (
 				4B4EC40325D16159009F38AF /* Sources */,
 				4B4EC40425D16159009F38AF /* Frameworks */,
@@ -161,9 +161,9 @@
 			);
 			dependencies = (
 			);
-			name = HW1_2Sakhanko;
+			name = HW1_3Sakhanko;
 			productName = HW1_2Sakhanko;
-			productReference = 4B4EC40725D16159009F38AF /* HW1_2Sakhanko.app */;
+			productReference = 4B4EC40725D16159009F38AF /* HW1_3Sakhanko.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -180,7 +180,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4B4EC40225D16159009F38AF /* Build configuration list for PBXProject "HW1_2Sakhanko" */;
+			buildConfigurationList = 4B4EC40225D16159009F38AF /* Build configuration list for PBXProject "HW1_3Sakhanko" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -193,7 +193,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4B4EC40625D16159009F38AF /* HW1_2Sakhanko */,
+				4B4EC40625D16159009F38AF /* HW1_3Sakhanko */,
 			);
 		};
 /* End PBXProject section */
@@ -223,7 +223,7 @@
 				4B4EC42725D16282009F38AF /* GifRowView.swift in Sources */,
 				4B4EC42A25D16282009F38AF /* GifsFeedView.swift in Sources */,
 				4B2986F225FABFDA00B67FCA /* AppSettings.swift in Sources */,
-				4B4EC40B25D16159009F38AF /* HW1_2SakhankoApp.swift in Sources */,
+				4B4EC40B25D16159009F38AF /* HW1_3SakhankoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,16 +352,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"HW1_2Sakhanko/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"HW1_3Sakhanko/Preview Content\"";
 				DEVELOPMENT_TEAM = 5NGK57BNWL;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/HW1_2Sakhanko/Sources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/HW1_3Sakhanko/Sources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "SakhankoApps.HW1-2Sakhanko";
+				PRODUCT_BUNDLE_IDENTIFIER = "SakhankoApps.HW1-3Sakhanko";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -374,16 +374,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"HW1_2Sakhanko/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"HW1_3Sakhanko/Preview Content\"";
 				DEVELOPMENT_TEAM = 5NGK57BNWL;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/HW1_2Sakhanko/Sources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/HW1_3Sakhanko/Sources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "SakhankoApps.HW1-2Sakhanko";
+				PRODUCT_BUNDLE_IDENTIFIER = "SakhankoApps.HW1-3Sakhanko";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -393,7 +393,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4B4EC40225D16159009F38AF /* Build configuration list for PBXProject "HW1_2Sakhanko" */ = {
+		4B4EC40225D16159009F38AF /* Build configuration list for PBXProject "HW1_3Sakhanko" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B4EC41425D1615A009F38AF /* Debug */,
@@ -402,7 +402,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4B4EC41625D1615A009F38AF /* Build configuration list for PBXNativeTarget "HW1_2Sakhanko" */ = {
+		4B4EC41625D1615A009F38AF /* Build configuration list for PBXNativeTarget "HW1_3Sakhanko" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B4EC41725D1615A009F38AF /* Debug */,

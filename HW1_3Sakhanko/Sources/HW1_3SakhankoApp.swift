@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct HW1_2SakhankoApp: App {
+struct HW1_3SakhankoApp: App {
     var body: some Scene {
         WindowGroup {
             GifsFeedView()
