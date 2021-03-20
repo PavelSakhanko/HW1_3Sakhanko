@@ -1,19 +1,14 @@
 //
-//  NetworkManager.swift
-//  HW_1_2_ Sakhanko
+//  NetworkService.swift
+//  HW_1_3_ Sakhanko
 //
 //  Created by Pavel Sakhanko on 30.01.21.
 //
 
 import Foundation
 
-enum APIError: Error {
-    case decodingError
-    case httpError(Int)
-    case unknown
-}
+class NetworkService {
 
-class NetworkManager {
     enum ApiType: String {
         case gifs = "gifs"
         case stickers = "stickers"
@@ -41,6 +36,28 @@ class NetworkManager {
         urlComponents.setQueryItems(with: trendingQueryParams)
 
         return urlComponents.url!.absoluteString
+    }
+
+    func startDataTask(
+        page: Int,
+        completionHandler: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void)
+    {
+        let apiType: NetworkService.ApiType = AppSettingsService.apiType.contains("Gifs") ? .gifs : .stickers
+        let urlString = makeRequestFromURL(with: apiType, with: .trending) + "&limit=\(page)"
+        guard let url = URL(string: urlString) else { return }
+        let task = URLSession.shared.dataTask(with: url, completionHandler: completionHandler)
+        task.resume()
+    }
+
+    func parseGifsFromData(data: Data) -> [GifData] {
+        var response: GifsApiResponse?
+        do {
+            response = try JSONDecoder().decode(GifsApiResponse.self, from: data)
+        } catch {
+            return []
+        }
+
+        return response?.data ?? []
     }
 }
 

@@ -1,99 +1,11 @@
 //
 //  GifsFeedModel.swift
-//  HW_1_2_ Sakhanko
+//  HW_1_3_ Sakhanko
 //
 //  Created by Pavel Sakhanko on 30.01.21.
 //
 
 import Foundation
-
-class GifsFeed: ObservableObject, RandomAccessCollection {
-    
-    enum LoadStatus {
-        case ready (nextPage: Int)
-        case loading (page: Int)
-        case parseError
-        case done
-    }
-    
-    @Published var gifsFeedItems = [GifData]()
-    
-    typealias Element = GifData
-    
-    var startIndex: Int { gifsFeedItems.startIndex }
-    var endIndex: Int { gifsFeedItems.endIndex }
-    var loadStatus = LoadStatus.ready(nextPage: 1)
-    
-    subscript(position: Int) -> GifData {
-        return gifsFeedItems[position]
-    }
-
-    init() {
-        loadGifs()
-    }
-        
-    func loadGifs(currentItem: GifData? = nil) {
-        if !shouldLoadMoreData(currentItem: currentItem) { return }
-        guard case let .ready(page) = loadStatus else { return }
-        loadStatus = .loading(page: page)
-        if !shouldLoadMoreData(currentItem: currentItem) { return }
-        let apiType: NetworkManager.ApiType = AppSettingsService.apiType.contains("Gifs") ? .gifs : .stickers
-        let urlString = NetworkManager().makeRequestFromURL(with: apiType, with: .trending) + "&limit=\(page)"
-        guard let url = URL(string: urlString) else { return }
-        let task = URLSession.shared.dataTask(with: url, completionHandler: parseGifsFromResponse(data:response:error:))
-        task.resume()
-    }
-    
-    private func shouldLoadMoreData(currentItem: GifData? = nil) -> Bool {
-        guard let currentItem = currentItem else {
-            return true
-        }
-        
-        for n in (gifsFeedItems.count - 2)...(gifsFeedItems.count - 1) {
-            if n >= 0 && currentItem.id == gifsFeedItems[n].id {
-                return true
-            }
-        }
-        return false
-    }
-
-    private func parseGifsFromResponse(data: Data?, response: URLResponse?, error: Error?) {
-        guard error == nil else {
-            loadStatus = .parseError
-            return
-        }
-        guard let data = data else {
-            loadStatus = .parseError
-            return
-        }
-    
-        let newGifs = parseGifsFromData(data: data)
-        DispatchQueue.main.async {
-            self.gifsFeedItems = []
-            self.gifsFeedItems.append(contentsOf: newGifs)
-            if self.gifsFeedItems.isEmpty {
-                self.loadStatus = .done
-            } else {
-                guard case let .loading(page) = self.loadStatus else {
-                    fatalError("loadSatus is in a bad state")
-                }
-                self.loadStatus = .ready(nextPage: page + 1)
-            }
-        }
-    }
-    
-    private func parseGifsFromData(data: Data) -> [GifData] {
-        var response: GifsApiResponse?
-        do {
-            response = try JSONDecoder().decode(GifsApiResponse.self, from: data)
-        } catch {
-            print(APIError.decodingError)
-            return []
-        }
-
-        return response?.data ?? []
-    }
-}
 
 class GifsApiResponse: Codable {
     var data: [GifData]?

@@ -1,6 +1,6 @@
 //
 //  AppSettings.swift
-//  DebtsControlBeta
+//  HW_1_3_ Sakhanko
 //
 //  Created by Pavel Sakhanko on 3.10.20.
 //
