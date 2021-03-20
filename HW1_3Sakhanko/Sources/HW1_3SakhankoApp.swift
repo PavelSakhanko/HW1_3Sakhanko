@@ -1,6 +1,6 @@
 //
-//  HW1_2SakhankoApp.swift
-//  HW1_2Sakhanko
+//  HW1_3_ SakhankoApp.swift
+//  HW1_3_ Sakhanko
 //
 //  Created by Pavel Sakhanko on 8.02.21.
 //

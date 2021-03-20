@@ -1,6 +1,6 @@
 //
 //  GifsFeedView.swift
-//  HW_1_2_ Sakhanko
+//  HW_1_3_ Sakhanko
 //
 //  Created by Pavel Sakhanko on 30.01.21.
 //
@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct GifsFeedView: View {
-    
-    @ObservedObject var gifsFeed = GifsFeed()
+
+    @ObservedObject var feedService = FeedService()
     @State private var selectedSegment = 0
 
     init() {
@@ -17,20 +17,20 @@ struct GifsFeedView: View {
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.red], for: .normal)
     }
-    
+
     var body: some View {
         
-        let gifs = NetworkManager.ApiType.gifs.description
-        let stickers = NetworkManager.ApiType.stickers.description
+        let gifs = NetworkService.ApiType.gifs.description
+        let stickers = NetworkService.ApiType.stickers.description
         
         NavigationView {
             VStack {
-                List(gifsFeed) { (gif: GifData) in
+                List(feedService.gifsFeedItems) { (gif: GifData) in
                     NavigationLink(destination: GifDetailView(gif: gif)) {
                         GifRowView(gif: gif)
                             .frame(height: 120)
                             .onAppear {
-                                gifsFeed.loadGifs(currentItem: gif)
+                                feedService.loadGifs(currentItem: gif)
                             }
                     }
                 }
@@ -40,7 +40,7 @@ struct GifsFeedView: View {
                 }
                 .onChange(of: selectedSegment) {
                     AppSettingsService.apiType = $0 == 0 ? gifs : stickers
-                    gifsFeed.loadGifs()
+                    feedService.loadGifs(currentItem: nil)
                 }
                 .frame(width: UIScreen.main.bounds.size.width / 2, height: 80, alignment: .center)
                 .pickerStyle(SegmentedPickerStyle())

@@ -1,6 +1,6 @@
 //
 //  Image+navIconModifier.swift
-//  HW_1_2_ Sakhanko
+//  HW_1_3_ Sakhanko
 //
 //  Created by Pavel Sakhanko on 1.02.21.
 //

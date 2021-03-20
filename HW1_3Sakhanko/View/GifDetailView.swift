@@ -1,6 +1,6 @@
 //
 //  GifDetailView.swift
-//  HW1_2Sakhanko
+//  HW1_3_ Sakhanko
 //
 //  Created by Pavel Sakhanko on 11.03.21.
 //
