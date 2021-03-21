@@ -42,7 +42,7 @@ class NetworkService {
         page: Int,
         completionHandler: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void)
     {
-        let apiType: NetworkService.ApiType = AppSettingsService.apiType.contains("Gifs") ? .gifs : .stickers
+        let apiType: NetworkService.ApiType = AppSettingsService().apiType.contains("Gifs") ? .gifs : .stickers
         let urlString = makeRequestFromURL(with: apiType, with: .trending) + "&limit=\(page)"
         guard let url = URL(string: urlString) else { return }
         let task = URLSession.shared.dataTask(with: url, completionHandler: completionHandler)

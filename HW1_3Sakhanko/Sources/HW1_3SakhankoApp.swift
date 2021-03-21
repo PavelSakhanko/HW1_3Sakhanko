@@ -9,11 +9,15 @@ import SwiftUI
 
 @main
 struct HW1_3SakhankoApp: App {
+
+    let dependencyManager = DependencyManager()
+
     var body: some Scene {
         WindowGroup {
             GifsFeedView()
+                .environment(\.dependencyManager, dependencyManager)
                 .onAppear() {
-                    AppSettingsService.apiType = "Gifs"
+                    dependencyManager.appSettingsService.apiType = "Gifs"
                 }
         }
     }

@@ -10,6 +10,9 @@ import Foundation
 class FeedService: ObservableObject, RandomAccessCollection {
     
     @Inject var networkService: NetworkService
+    @Published var gifsFeedItems = [GifData]()
+
+    typealias Element = GifData
 
     init(networkService: NetworkService = NetworkService()) {
         self.networkService = networkService
@@ -24,11 +27,7 @@ class FeedService: ObservableObject, RandomAccessCollection {
     }
 
     var loadStatus = LoadStatus.ready(nextPage: 1)
-    
-    @Published var gifsFeedItems = [GifData]()
 
-    typealias Element = GifData
-    
     var startIndex: Int { gifsFeedItems.startIndex }
     var endIndex: Int { gifsFeedItems.endIndex }
     

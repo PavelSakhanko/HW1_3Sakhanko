@@ -11,6 +11,7 @@ struct GifsFeedView: View {
 
     @ObservedObject var feedService = FeedService()
     @State private var selectedSegment = 0
+    @Environment(\.dependencyManager) var dependencyManager: DependencyManager
 
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = .red
@@ -39,7 +40,7 @@ struct GifsFeedView: View {
                     Text((stickers)).tag(1)
                 }
                 .onChange(of: selectedSegment) {
-                    AppSettingsService.apiType = $0 == 0 ? gifs : stickers
+                    dependencyManager.appSettingsService.apiType = $0 == 0 ? gifs : stickers
                     feedService.loadGifs(currentItem: nil)
                 }
                 .frame(width: UIScreen.main.bounds.size.width / 2, height: 80, alignment: .center)

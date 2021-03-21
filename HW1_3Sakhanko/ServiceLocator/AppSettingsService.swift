@@ -12,11 +12,11 @@ struct Defaults {
 }
 
 protocol AppSettingsServicing: AnyObject {
-    static var apiType: String { get set }
+    var apiType: String { get set }
 }
 
 class AppSettingsService: AppSettingsServicing {
-    static var apiType: String {
+    var apiType: String {
         get { UserDefaults.standard.string(forKey: Defaults.appPin) ?? "" }
         set(value) { UserDefaults.standard.set(value, forKey: Defaults.appPin) }
     }

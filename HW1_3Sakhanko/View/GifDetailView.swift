@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import CustomUI
 
 struct GifDetailView: View {
     
+    @State private var isUrlShowing = false
     var gif: GifData
     
     var body: some View {
@@ -22,12 +24,22 @@ struct GifDetailView: View {
                             .navigationBarHidden(true)
                     )
                         .font(.headline)
+                        .padding()
                     HStack {
                         Spacer()
-                        Text(gif.url)
-                            .font(.subheadline)
+                        if isUrlShowing {
+                            Text(gif.url)
+                                .font(.subheadline)
+                        }
                         Spacer()
                     }
+
+                    Spacer()
+                    
+                    Button("\(isUrlShowing ? "Hide" : "Show")" + " URL") {
+                        isUrlShowing.toggle()
+                    }
+                    .buttonStyle(CustomButtonStyle())
                 }
             }
         }
