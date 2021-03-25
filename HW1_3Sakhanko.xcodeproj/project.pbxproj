@@ -19,7 +19,6 @@
 		4B4EC42A25D16282009F38AF /* GifsFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EC42325D16282009F38AF /* GifsFeedView.swift */; };
 		4B4EC43025D162A4009F38AF /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EC42F25D162A4009F38AF /* Gif.swift */; };
 		4B4EC43525D162DB009F38AF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EC43425D162DB009F38AF /* NetworkService.swift */; };
-		4B4F0579260CF52000A40CC5 /* CustomUI in Resources */ = {isa = PBXBuildFile; fileRef = 4B4F0578260CF52000A40CC5 /* CustomUI */; };
 		4B7C360226068E540096833B /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C360126068E540096833B /* FeedService.swift */; };
 		4B9303A7260CF84B00E65094 /* CustomUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4B9303A6260CF84B00E65094 /* CustomUI */; };
 /* End PBXBuildFile section */
@@ -39,7 +38,6 @@
 		4B4EC42325D16282009F38AF /* GifsFeedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifsFeedView.swift; sourceTree = "<group>"; };
 		4B4EC42F25D162A4009F38AF /* Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
 		4B4EC43425D162DB009F38AF /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		4B4F0578260CF52000A40CC5 /* CustomUI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CustomUI; path = ../CustomUI; sourceTree = "<group>"; };
 		4B7C360126068E540096833B /* FeedService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,7 +68,6 @@
 		4B4EC3FE25D16159009F38AF = {
 			isa = PBXGroup;
 			children = (
-				4B4F0578260CF52000A40CC5 /* CustomUI */,
 				4B4EC40925D16159009F38AF /* HW1_3Sakhanko */,
 				4B4EC40825D16159009F38AF /* Products */,
 				4BF6AE2F260767080053D2E2 /* Frameworks */,
@@ -202,7 +199,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B4EC41225D1615A009F38AF /* Preview Assets.xcassets in Resources */,
-				4B4F0579260CF52000A40CC5 /* CustomUI in Resources */,
 				4B4EC40F25D1615A009F38AF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
