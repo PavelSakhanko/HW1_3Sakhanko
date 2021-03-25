@@ -21,7 +21,7 @@
 		4B4EC43525D162DB009F38AF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EC43425D162DB009F38AF /* NetworkService.swift */; };
 		4B4F0579260CF52000A40CC5 /* CustomUI in Resources */ = {isa = PBXBuildFile; fileRef = 4B4F0578260CF52000A40CC5 /* CustomUI */; };
 		4B7C360226068E540096833B /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C360126068E540096833B /* FeedService.swift */; };
-		4BC11A7B26076D8F0020C22D /* CustomUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4BC11A7A26076D8F0020C22D /* CustomUI */; };
+		4B9303A7260CF84B00E65094 /* CustomUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4B9303A6260CF84B00E65094 /* CustomUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BC11A7B26076D8F0020C22D /* CustomUI in Frameworks */,
+				4B9303A7260CF84B00E65094 /* CustomUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,7 +158,7 @@
 			);
 			name = HW1_3Sakhanko;
 			packageProductDependencies = (
-				4BC11A7A26076D8F0020C22D /* CustomUI */,
+				4B9303A6260CF84B00E65094 /* CustomUI */,
 			);
 			productName = HW1_2Sakhanko;
 			productReference = 4B4EC40725D16159009F38AF /* HW1_3Sakhanko.app */;
@@ -415,7 +415,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4BC11A7A26076D8F0020C22D /* CustomUI */ = {
+		4B9303A6260CF84B00E65094 /* CustomUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CustomUI;
 		};
