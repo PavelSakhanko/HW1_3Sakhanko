@@ -7,16 +7,32 @@
 
 import Foundation
 
-class FeedService: ObservableObject, RandomAccessCollection {
-    
-    @Inject var networkService: NetworkService
+class FeedViewModel: ObservableObject, RandomAccessCollection {
+
     @Published var gifsFeedItems = [GifData]()
+    @Published var networkService: NetworkService?
+    @Published var appSettingsService: AppSettingsService?
 
     typealias Element = GifData
+    let locator: ServiceLocator
 
-    init(networkService: NetworkService = NetworkService()) {
-        self.networkService = networkService
-        loadGifs()
+    init(locator: ServiceLocator) {
+      self.locator = locator
+      self.networkService = getNetworkService()
+      self.appSettingsService = getAppSettingsService()
+
+      loadGifs()
+    }
+
+    func getNetworkService() -> NetworkService? {
+      guard let service: NetworkService = locator.resolve() else { return nil }
+      return service
+    }
+
+    func getAppSettingsService() -> AppSettingsService? {
+      guard let service: AppSettingsService = locator.resolve() else { return nil }
+      service.apiType = "Gifs"
+      return service
     }
 
     enum LoadStatus {
@@ -40,23 +56,20 @@ class FeedService: ObservableObject, RandomAccessCollection {
         guard case let .ready(page) = loadStatus else { return }
         loadStatus = .loading(page: page)
         if !shouldLoadMoreData(currentItem: currentItem) { return }
-        networkService.startDataTask(
+        networkService?.startDataTask(
             page: page,
             completionHandler: parseGifsFromResponse(data:response:error:)
         )
     }
 
     private func parseGifsFromResponse(data: Data?, response: URLResponse?, error: Error?) {
-        guard error == nil else {
-            loadStatus = .parseError
-            return
-        }
-        guard let data = data else {
+        guard error == nil,
+              let data = data,
+              let newGifs = networkService?.parseGifsFromData(data: data) else {
             loadStatus = .parseError
             return
         }
 
-        let newGifs = networkService.parseGifsFromData(data: data)
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.gifsFeedItems = []

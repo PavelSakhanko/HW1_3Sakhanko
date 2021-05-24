@@ -52,11 +52,13 @@ class NetworkService {
     func parseGifsFromData(data: Data) -> [GifData] {
         var response: GifsApiResponse?
         do {
-            response = try JSONDecoder().decode(GifsApiResponse.self, from: data)
+          if let returnData = String(data: data, encoding: .utf8) {
+            print(returnData)
+          }
+          response = try JSONDecoder().decode(GifsApiResponse?.self, from: data)
         } catch {
             return []
         }
-
         return response?.data ?? []
     }
 }

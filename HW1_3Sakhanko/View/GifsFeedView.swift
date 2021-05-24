@@ -9,29 +9,21 @@ import SwiftUI
 
 struct GifsFeedView: View {
 
-    @ObservedObject var feedService = FeedService()
+    @ObservedObject var viewModel: FeedViewModel
     @State private var selectedSegment = 0
-    @Environment(\.dependencyManager) var dependencyManager: DependencyManager
-
-    init() {
-        UISegmentedControl.appearance().selectedSegmentTintColor = .red
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.red], for: .normal)
-    }
 
     var body: some View {
-        
         let gifs = NetworkService.ApiType.gifs.description
         let stickers = NetworkService.ApiType.stickers.description
-        
+
         NavigationView {
             VStack {
-                List(feedService.gifsFeedItems) { (gif: GifData) in
+                List(viewModel.gifsFeedItems) { (gif: GifData) in
                     NavigationLink(destination: GifDetailView(gif: gif)) {
                         GifRowView(gif: gif)
                             .frame(height: 120)
                             .onAppear {
-                                feedService.loadGifs(currentItem: gif)
+                              viewModel.loadGifs(currentItem: gif)
                             }
                     }
                 }
@@ -40,8 +32,8 @@ struct GifsFeedView: View {
                     Text((stickers)).tag(1)
                 }
                 .onChange(of: selectedSegment) {
-                    dependencyManager.appSettingsService.apiType = $0 == 0 ? gifs : stickers
-                    feedService.loadGifs(currentItem: nil)
+                    viewModel.appSettingsService?.apiType = $0 == 0 ? gifs : stickers
+                    viewModel.loadGifs(currentItem: nil)
                 }
                 .frame(width: UIScreen.main.bounds.size.width / 2, height: 80, alignment: .center)
                 .pickerStyle(SegmentedPickerStyle())

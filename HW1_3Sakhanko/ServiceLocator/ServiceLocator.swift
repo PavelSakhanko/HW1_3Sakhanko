@@ -7,35 +7,22 @@
 
 import Foundation
 
-protocol ServiceLocation {
-    func resolve<T>() -> T
+protocol Locator {
+    func resolve<T>() -> T?
 }
 
-struct ServiceLocator: ServiceLocation {
-    private static var services: [ObjectIdentifier: Any] = [:]
-    private init() {}
-
-    func resolve<T>() -> T {
-        guard let services = ServiceLocator.services[ServiceLocator.key(for: T.self)] as? T else {
-            fatalError("No service for type \(T.self)")
-        }
-        return services
-    }
+final class ServiceLocator: Locator {
+    private var services: [ObjectIdentifier: Any] = [:]
     
-    static func registerService<T>(_ service: T) {
+    func register<T>(_ service: T) {
         services[key(for: T.self)] = service
     }
-
-    static func key<T>(for type: T.Type) -> ObjectIdentifier {
-        return ObjectIdentifier(T.self)
+    
+    func resolve<T>() -> T? {
+        return services[key(for: T.self)] as? T
     }
-}
 
-@propertyWrapper struct Inject<T> {
-    var wrappedValue: T
-
-    init(wrappedValue: T) {
-        self.wrappedValue = wrappedValue
-        ServiceLocator.registerService(wrappedValue)
+    private func key<T>(for type: T.Type) -> ObjectIdentifier {
+        return ObjectIdentifier(T.self)
     }
 }
